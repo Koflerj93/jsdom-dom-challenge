@@ -44,16 +44,16 @@ likeBtn.addEventListener("click", e => {
     }
     if (array1.flat().includes(counterValue)){
       let likesLi = Array.from(document.getElementsByTagName("li"));
-      let found;
+      let liItems;
       for (let i = 0; i < likesLi.length; i++) {
         if (likesLi[i].innerText.substring(1,0) == counterValue || likesLi[i].innerText.substring(2,0) == counterValue|| likesLi[i].innerText.substring(3,0) == counterValue) {
-          found = likesLi[i];
+        liItems = likesLi[i];
           break;
         }
       }
-      let splitArray = found.innerText.split(' - ');
+      let splitArray = liItems.innerText.split(' - ');
       let lastNum = parseInt(splitArray[1], 10);
-      found.innerText = `${counterValue} - ${lastNum += 1}`
+      liItems.innerText = `${counterValue} - ${lastNum += 1}`
       
     } else {
       const li = document.createElement('li');
