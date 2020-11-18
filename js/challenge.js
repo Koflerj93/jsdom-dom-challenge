@@ -53,14 +53,14 @@ likeBtn.addEventListener("click", e => {
       }
       let splitArray = found.innerText.split(' - ');
       let lastNum = parseInt(splitArray[1], 10);
-      found.innerText = `${counterValue} - ${lastNum += 1}`;
+      found.innerText = `${counterValue} - ${lastNum += 1}`
       
     } else {
       const li = document.createElement('li');
       let likeNum = 1;
       li.innerHTML = `
       ${counter.innerText} - ${likeNum}
-      `;
+      `
       ulElement.append(li);
     }
 });
@@ -72,7 +72,7 @@ pauseBtn.addEventListener('click', e => {
       plusBtn.disabled = false;
       minusBtn.disabled = false;
       likeBtn.disabled = false;
-      myInterval = setInterval(addToCounter, 1000);
+      interval = setInterval(addToCounter, 1000);
     } else {
       clearInterval(interval);
       pauseBtn.innerText = "resume";
